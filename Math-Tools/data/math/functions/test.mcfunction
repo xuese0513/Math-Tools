@@ -1,3 +1,23 @@
-data modify storage minecraft:decimal stack append value 1.5
-scoreboard players set #n var 17
-function math:decimal/pow
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+data modify storage minecraft:decimal stack append value 0.5
+function math:compute/mul_all

@@ -11,7 +11,11 @@ scoreboard players set #log_iters const 20
 forceload add -1 -1 1 1
 
 data merge storage templates {Modifiers:[{Name:"add", Amount:0.0d, Operation:0, UUID:[I;0,0,0,0]},{Name:"multiply_base", Amount:1.0d, Operation:1, UUID:[I;1,0,0,0]}, {Name:"multiply", Amount:1.0d, Operation:2, UUID:[I;2,0,0,0]}]}
-data merge storage decimal {stack:[], Modifiers:[], variables:[], value:0.0d}
+data merge storage templates {Vector2D:[0.0d, 0.0d]}
+data merge storage templates {Vector3D:[0.0d, 0.0d, 0.0d]}
+
+
+data merge storage calculator {stack:[], Modifiers:[], register:[], vectors:[], value:0.0d}
 
 kill @e[tag=gpoint]
 # processing any geometrical calculation: geometric-point
