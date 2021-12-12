@@ -1,4 +1,4 @@
 # Table of contents
 
 * [Minecraft Math](README.md)
-  * [Page 1](minecraft-math/page-1.md)
+  * [小數計算](minecraft-math/xiao-shu-ji-suan.md)
