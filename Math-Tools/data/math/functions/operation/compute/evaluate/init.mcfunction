@@ -1,0 +1,2 @@
+summon armor_stand 0.0 0.0 0.0 {Invulnerable:1,NoGravity:1,Marker:1,Tags:["_evaluate"],Attributes:[{Name:"minecraft:generic.movement_speed",Base:0.0d}]}
+execute as @e[tag=_evaluate] run function math:operation/compute/evaluate/operate

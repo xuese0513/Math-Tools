@@ -1,23 +1,3 @@
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-data modify storage minecraft:decimal stack append value 0.5
-function math:compute/mul_all
+scoreboard players set #count var 400
+data modify storage calculator vec append value []
+function math:testloop

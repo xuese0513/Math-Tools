@@ -1,13 +1,13 @@
 # 
-# input : pair of vector2D[a, b] stored in calculator:vector[-2, -1] (no consume)
-# calculate : a ⨯ b
-# output : calculator:stack[-1]
+# input : pair of vector2D[A, B] stored in calculator:vector[-2, -1] (no consume)
+# calculate : A ⨯ B
+# output : calculator:vec[0][-1]
 # 
 
-data modify storage calculator stack append from storage calculator vectors[-2][0]
-data modify storage calculator stack append from storage calculator vectors[-1][1]
+data modify storage calculator vec[0] append from storage calculator vec[-2][0]
+data modify storage calculator vec[0] append from storage calculator vec[-1][1]
 function math:compute/mul
-data modify storage calculator stack append from storage calculator vectors[-2][1]
-data modify storage calculator stack append from storage calculator vectors[-1][0]
+data modify storage calculator vec[0] append from storage calculator vec[-2][1]
+data modify storage calculator vec[0] append from storage calculator vec[-1][0]
 function math:compute/mul
 function math:compute/sub

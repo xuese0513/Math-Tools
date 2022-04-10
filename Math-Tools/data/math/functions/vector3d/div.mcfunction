@@ -1,30 +1,29 @@
 # 
-# input : vector3D v stored in calculator:vectors[-1] (no consume)
-#         number n stored in calculator:stack[-1] with double number
+# input : vector3D v stored in calculator:vec[-1]
+#         number n stored in calculator:vec[0][-1] with double number
 #
 # calculate : v / n
-# output : push back of calculator:vectors[-1] 
+# output : push back of calculator:vec[-1] 
 # 
 
-data modify storage calculator register append from storage calculator stack[-1]
-
-
-data modify storage calculator stack insert -2 from storage calculator vectors[-1][0]
+data modify storage calculator vec[0] insert -2 value 1
 function math:compute/div
+data modify storage calculator register append from storage calculator vec[0][-1]
 
-data modify storage calculator stack append from storage calculator vectors[-1][1]
-data modify storage calculator stack append from storage calculator register[-1]
-function math:compute/div
+data modify storage calculator vec[0] append from storage calculator vec[-1][0]
+data modify storage calculator vec[0] append from storage calculator vec[-1][1]
+data modify storage calculator vec[0] append from storage calculator vec[-1][2]
 
-data modify storage calculator stack append from storage calculator vectors[-1][2]
-data modify storage calculator stack append from storage calculator register[-1]
-function math:compute/div
+data modify storage calculator vec[0] append from storage calculator register[-1]
+function math:compute/mul
+data modify storage calculator vec[-1][2] set from storage calculator vec[0][-1]
+data remove storage calculator vec[0][-1]
 
-data modify storage calculator vectors append from storage templates Vector3D
+data modify storage calculator vec[0] append from storage calculator register[-1]
+function math:compute/mul
+data modify storage calculator vec[-1][1] set from storage calculator vec[0][-1]
+data remove storage calculator vec[0][-1]
 
-data modify storage calculator vectors[-1][2] set from storage calculator stack[-1]
-data remove storage calculator stack[-1]
-data modify storage calculator vectors[-1][1] set from storage calculator stack[-1]
-data remove storage calculator stack[-1]
-data modify storage calculator vectors[-1][0] set from storage calculator stack[-1]
-data remove storage calculator stack[-1]
+function math:compute/mul
+data modify storage calculator vec[-1][0] set from storage calculator vec[0][-1]
+data remove storage calculator vec[0][-1]

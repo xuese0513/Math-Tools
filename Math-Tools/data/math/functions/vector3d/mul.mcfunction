@@ -1,13 +1,27 @@
 # 
-# input : vector3D v stored in calculator:vectors[-1]
-#         number n stored in calculator:stack[-1] with double number
+# input : vector3D v stored in calculator:vec[-1]
+#         number n stored in calculator:vec[0][-1] with double number
 #
 # calculate : v * n
-# output : push back of calculator:vectors[-1] 
+# output : push back of calculator:vec[-1] 
 # 
 
-data modify storage calculator Modifiers set value [{Name:"add", Amount:0.0d, Operation:0, UUID:[I;0,0,0,0]},{Name:"multiply_base", Amount:0.0d, Operation:1, UUID:[I;1,0,0,0]},{Name:"offset",Amount:-1.0d,Operation:1,UUID:[I;1,0,0,-1]}]
+data modify storage calculator register append from storage calculator vec[0][-1]
 
-summon armor_stand 0.0 0.0 0.0 {Invulnerable:1,NoGravity:1,Marker:1,Tags:["decimal"],Attributes:[{Name:"minecraft:generic.movement_speed",Base:0.0d}]}
+data modify storage calculator vec[0] append from storage calculator vec[-1][0]
+data modify storage calculator vec[0] append from storage calculator vec[-1][1]
+data modify storage calculator vec[0] append from storage calculator vec[-1][2]
 
-execute as @e[tag=decimal] run function math:operation/vector3d/mul
+data modify storage calculator vec[0] append from storage calculator register[-1]
+function math:compute/mul
+data modify storage calculator vec[-1][2] set from storage calculator vec[0][-1]
+data remove storage calculator vec[0][-1]
+
+data modify storage calculator vec[0] append from storage calculator register[-1]
+function math:compute/mul
+data modify storage calculator vec[-1][1] set from storage calculator vec[0][-1]
+data remove storage calculator vec[0][-1]
+
+function math:compute/mul
+data modify storage calculator vec[-1][0] set from storage calculator vec[0][-1]
+data remove storage calculator vec[0][-1]
